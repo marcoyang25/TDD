@@ -1,7 +1,14 @@
 package org.example;
 
 public class Umbrella {
-    public int totalPrice(IWeather weather, int quantity, int price) {
+
+    private final IWeather weather;
+
+    public Umbrella(IWeather weather) {
+        this.weather = weather;
+    }
+
+    public int totalPrice(int quantity, int price) {
         var isSunny = weather.isSunny();
         var totalPrice = quantity * price;
 

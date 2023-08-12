@@ -8,9 +8,9 @@ class UmbrellaTest {
 
     @Test
     void shouldReturnTotalPriceWhenSunny() {
-        Umbrella umbrella = new Umbrella();
         var weather = new StubWeather();
-        var price = umbrella.totalPrice(weather, 1, 100);
+        Umbrella umbrella = new Umbrella(weather);
+        var price = umbrella.totalPrice(1, 100);
         assertEquals(90, price);
     }
 }
